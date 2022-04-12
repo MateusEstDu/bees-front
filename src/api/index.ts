@@ -5,15 +5,36 @@ const apiBreweryRoot = axios.create({
 })
 
 const fetch = () => {
-    return apiBreweryRoot.get("/breweries");
+    return apiBreweryRoot.get(
+        "/breweries",
+        {
+            params: {
+                per_page: 9
+            }    
+        }
+
+    );
 };
+
 const fetchPage = (pageNumber: number) => {
     return apiBreweryRoot.get(
         "/breweries",
         {
             params: {
                 page: pageNumber,
-                per_page: 6
+                per_page: 9
+            }    
+        }
+    );
+}
+
+const fecthNextItem = (pageNumber: number) => {
+    return apiBreweryRoot.get(
+        "/breweries",
+        {
+            params: {
+                page: pageNumber,
+                per_page: 1
             }    
         }
     );
