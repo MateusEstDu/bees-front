@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
-import './CredentialForm.css';
+import './css/CredentialForm.css';
 
 export interface IUserForm {
     name: string,

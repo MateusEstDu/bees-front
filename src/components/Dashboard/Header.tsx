@@ -6,8 +6,8 @@ function Header() {
 
     return(
         <header>
-            <p> AAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
-            <p> VRUM VRUM</p>
+            <p> Go Back </p>
+            <p> Olá {user.name} </p>
         </header>
     );
 }

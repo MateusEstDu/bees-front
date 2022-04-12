@@ -1,6 +1,6 @@
 import logo from '../../assets/images/bee3.png';
 import CredentialsForm from './CredentialForm';
-import './Credentials.css';
+import './css/Credentials.css';
 
 function Credentials() {
   return (

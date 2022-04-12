@@ -8,8 +8,7 @@ function Dashboard() {
     return(
         <div>
             <Header />
-            <p> Dashboard {user.name}</p>
-            <p>Adulto? {String(user.adult)}</p>
+            <p> Aqui vai uma lista de coisas!!</p>
         </div>
     );
 }
