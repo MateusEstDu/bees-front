@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import Credentials from './Credentials/Credentials';
+import Dashboard from './Dashboard/Dashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserContextProvider } from '../contexts/UserContext';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Credentials />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+    </BrowserRouter>
+  </UserContextProvider>
   );
 }
 
