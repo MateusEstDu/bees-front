@@ -1,0 +1,41 @@
+.listItem {
+  padding: 1rem;
+  border-style: solid;
+  border-width: 0.15vmax;
+  margin: 1rem 1rem;
+  border-radius: 5px;
+}
+
+.listItem__tags {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.listItem__tags__content {
+  background-color: #f2ec54;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 50px;
+}
+
+.listItem__tags__content__icon {
+  margin-right: 5%;
+  margin-left: 5%;
+  font-size: large;
+}
+
+.deleteIcon {
+  position: relative;
+  right: -98%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  font-size: calc(10px + 1vmin);
+}
+
+.deleteIcon:hover {
+  color: red;
+}
+/*# sourceMappingURL=BreweryItem.css.map */

@@ -1,0 +1,25 @@
+.header {
+    background-color: #f2ec54;
+    font-size: calc(10px + 1.5vmin);
+    font-weight: bold;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    transition: 0.3s ease all;
+
+    &__content{
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        &__link{
+            text-decoration: none;
+            color: black;
+
+            &:hover{
+                color: white;
+            }
+        }        
+    }
+}

@@ -1,0 +1,36 @@
+.listItem {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 0.15vmax;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+
+    &__tags{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &__content{
+            background-color: #f2ec54;;
+            margin: 5%;
+            padding: 5%;
+            border-radius: 50px;
+
+            &__icon{
+                margin-right: 5%;
+                margin-left: 5%;
+                font-size: large;
+            }
+        }
+    }
+}
+
+.deleteIcon {
+    position: relative;
+    right: -98%;
+    width: min-content;
+    font-size: calc(10px + 1vmin);
+
+    &:hover{
+        color: red;
+    }
+}

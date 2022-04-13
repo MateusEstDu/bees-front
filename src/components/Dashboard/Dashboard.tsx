@@ -1,15 +1,18 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import api from '../../api';
 import { UserContext } from '../../contexts/UserContext';
+import BreweriesList from './BreweriesList';
 import Header from './Header';
 
 function Dashboard() {
-    const { user } = useContext(UserContext);
 
     return(
-        <div>
-            <Header />
-            <p> Aqui vai uma lista de coisas!!</p>
-        </div>
+        <>
+        <Header />
+        <main>
+            <BreweriesList />
+        </main>
+        </>
     );
 }
 
