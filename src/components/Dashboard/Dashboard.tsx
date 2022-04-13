@@ -7,11 +7,12 @@ import Header from './Header';
 function Dashboard() {
 
     return(
-        <div>
-            <Header />
-            <p> Aqui vai uma lista de coisas!!</p>
+        <>
+        <Header />
+        <main>
             <BreweriesList />
-        </div>
+        </main>
+        </>
     );
 }
 

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import api from '../../api';
 import BreweryItem from './BreweryItem';
+import './css/BreweriesList.css'
 
-export interface IBrewery{
+export interface IBrewery {
     id: string,
     name: string,
     brewery_type: string,
@@ -23,46 +24,38 @@ export interface IBrewery{
 }
 
 function BreweriesList() {
-    const [ loading, setLoading ] = useState<boolean>();
-    const [ breweries, setBreweries ] = useState<[IBrewery]>();
+    const [ breweries, setBreweries ] = useState<IBrewery[]>();
 
     useEffect(() => {
         (async function fetchBreweries() {
             try{
-                setLoading(true);
                 const response = await api.fetch();
-                setBreweries(response.data)
-                setLoading(false);
+                setBreweries(response.data);
             } catch (err) {
                 console.log(err)
-                setLoading(false)
             }
         })();
     }, []);
 
-    function renderBreweries(breweries: [IBrewery]){
+    const handleDelete = (breweryKey: string) => {
+        setBreweries(breweries?.filter(b => b.id !== breweryKey));
+    }
+
+    function renderBreweries(breweries: IBrewery[]){
         if(breweries.length) {
             return breweries.map((brewery: IBrewery) => {
                 return (
-                    <BreweryItem brewery={brewery}/>
+                    <BreweryItem brewery={brewery} key={brewery.id} handleDelete={handleDelete} />
                 );
             });
         }
     }
 
-    /*useEffect(() => {
-        breweries?.map((brewery: IBrewery) => {
-            console.log(brewery)
-        })
-    }, [breweries]);*/
-
     return(
-        <div>
-            <p>
+        <div className='content'>
             {
-                loading ? "Carregando!" : breweries?.length ? renderBreweries(breweries) : "This are not the breweris you're looking for"
+                breweries?.length ? renderBreweries(breweries) : "There are no breweries!"
             }
-            </p>
         </div>
     );
 }
