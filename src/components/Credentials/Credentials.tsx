@@ -4,13 +4,11 @@ import './css/Credentials.css';
 
 function Credentials() {
   return (
-    <div className="Teste">
-        <img src={logo} className="Teste-logo" alt="logo" />
+    <div className="credentials">
+        <img src={logo} className="backgroudImage" alt="logo" />
         <p>
-          Please, enter your full name below
-        </p>
-        <p>
-          Only alphabetical characters are accepted
+          Please, enter your full name below!
+          And please remeber to use only alphabetical characters:
         </p>
         <CredentialsForm />
     </div>
