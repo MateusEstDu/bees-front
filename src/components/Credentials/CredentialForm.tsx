@@ -26,8 +26,8 @@ function CredentialsForm() {
     }
     
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='TesteForm'>
-            <input type={'text'} placeholder="Full name" defaultValue="" 
+        <form onSubmit={handleSubmit(onSubmit)} className='credentialsForm'>
+            <input className='nameInput' type={'text'} placeholder="Full name" defaultValue="" 
                 {...register(
                     "name",
                     {
@@ -39,11 +39,11 @@ function CredentialsForm() {
                     }
                 )} 
             />
-            <p>{errors.name?.message}</p>
+            <p className='errors'>{errors.name?.message}</p>
             <input type={'checkbox'} {...register("adult", {required: "You must be over 18 years old to continue"})} />
             <label htmlFor="adult">Are you older than 18 years old?</label>
-            <p>{errors.adult?.message}</p>
-            <input type={'submit'} disabled={!isValid} value='Enter'/>
+            <p className='errors'>{errors.adult?.message}</p>
+            <input className='nameInput' type={'submit'} disabled={!isValid} value='Enter'/>
         </form>
     );
 }
