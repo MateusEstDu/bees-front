@@ -2,7 +2,6 @@ import Credentials from './Credentials/Credentials';
 import Dashboard from './Dashboard/Dashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContextProvider } from '../contexts/UserContext';
-import './App.css';
 
 function App() {
   return (
